@@ -11,8 +11,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Let's Go', link: '/go' },
-      { text: 'Github', link: 'https://github.com/yCENzh'
+      { text: "Let's Go", link: '/go' },
+      { text: 'Github', link: 'https://github.com/yCENzh' }
     ],
 
     sidebar: sidebarPlugin.sideBar('vp', {
