@@ -29,3 +29,7 @@ venv
 .aider*
 .codebuddy/
 cache/
+
+.vitepress/cache/
+.vitepress/dist/
+.vitepress/out/
