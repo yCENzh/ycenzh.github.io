@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "pagefind": "^1.4.0",
     "vitepress": "2.0.0-alpha.12",
     "vitepress-plugin-pagefind": "^0.4.15",
     "vitepress-plugin-sidebar": "^1.0.1"

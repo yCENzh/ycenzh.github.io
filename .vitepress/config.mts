@@ -19,7 +19,7 @@ export default defineConfig({
         btnPlaceholder: 'Search',
         placeholder: '往事书',
         emptyText: '空空如也',
-        heading: '共: {{searchResult}} 条结果feat'
+        heading: '共: {{searchResult}} 条结果'
       })
     ]
   },
