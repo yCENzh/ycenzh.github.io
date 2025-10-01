@@ -15,7 +15,7 @@ export default defineConfig({
       { text: 'Github', link: 'https://github.com/yCENzh' }
     ],
 
-    sidebar: sidebarPlugin.sideBar('vp', {
+    sidebar: sidebarPlugin.sideBar('', {
       ignoreMDFiles: ['index.md'], // 忽略 index.md 文件
       collapsible: true, // 支持折叠
       collapsed: false, // 默认展开
