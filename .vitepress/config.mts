@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import sidebarPlugin from 'vitepress-plugin-sidebar'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -7,6 +8,22 @@ export default defineConfig({
   
   title: "Asterris",
   description: "Protect What You Love.",
+  
+  markdown: {
+    lineNumbers: true
+  },
+
+  vite: {
+    plugins: [
+      pagefindPlugin({
+        btnPlaceholder: 'Search',
+        placeholder: '往事书',
+        emptyText: '空空如也',
+        heading: '共: {{searchResult}} 条结果feat'
+      })
+    ]
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,7 +39,11 @@ export default defineConfig({
     }),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/yCENzh' }
+    ],
+
+    search: {
+      provider: 'local'
+    }
   }
 })
