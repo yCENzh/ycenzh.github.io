@@ -16,9 +16,7 @@ export default defineConfig({
     ],
 
     // 使用 vitepress-plugin-sidebar 自动生成侧边栏
-    sidebar: sidebarPlugin({
-      contentRoot: '', // 相对于 srcDir ('vp') 的根目录
-      contentDirs: ['.'], // 扫描 srcDir ('vp') 下的所有内容
+    sidebar: sidebarPlugin.sideBar('vp', {
       ignoreMDFiles: ['index.md'], // 忽略 index.md 文件
       collapsible: true, // 支持折叠
       collapsed: false, // 默认展开
