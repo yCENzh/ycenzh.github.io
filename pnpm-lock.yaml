@@ -11,6 +11,9 @@ importers:
       vitepress:
         specifier: 2.0.0-alpha.12
         version: 2.0.0-alpha.12(postcss@8.5.6)
+      vitepress-plugin-sidebar:
+        specifier: ^1.0.1
+        version: 1.0.1
 
 packages:
 
@@ -540,6 +543,9 @@ packages:
     resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
     engines: {node: '>=12.13'}
 
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
 
@@ -706,6 +712,9 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  vitepress-plugin-sidebar@1.0.1:
+    resolution: {integrity: sha512-+cPcBBz91IkjSMrq8lJjvpIF9boBLNx0s56ov3Y/Zs3J/Wiu7HEYrk94+W1EISY0/o1sifdGLW+0AdsOY1raeA==}
 
   vitepress@2.0.0-alpha.12:
     resolution: {integrity: sha512-yZwCwRRepcpN5QeAhwSnEJxS3I6zJcVixqL1dnm6km4cnriLpQyy2sXQDsE5Ti3pxGPbhU51nTMwI+XC1KNnJg==}
@@ -1158,6 +1167,8 @@ snapshots:
 
   is-what@4.1.16: {}
 
+  lodash@4.17.21: {}
+
   magic-string@0.30.19:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1339,6 +1350,10 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       fsevents: 2.3.3
+
+  vitepress-plugin-sidebar@1.0.1:
+    dependencies:
+      lodash: 4.17.21
 
   vitepress@2.0.0-alpha.12(postcss@8.5.6):
     dependencies:
