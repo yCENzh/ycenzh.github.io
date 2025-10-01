@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { sidebar } from 'vitepress-plugin-sidebar'
+// 由于 vitepress-plugin-sidebar 是 CommonJS 模块，需要使用默认导入
+import sidebarPlugin from 'vitepress-plugin-sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
     ],
 
     // 使用 vitepress-plugin-sidebar 自动生成侧边栏
-    sidebar: sidebar({
+    sidebar: sidebarPlugin({
       contentRoot: '', // 相对于 srcDir ('vp') 的根目录
       contentDirs: ['.'], // 扫描 srcDir ('vp') 下的所有内容
       ignoreMDFiles: ['index.md'], // 忽略 index.md 文件
