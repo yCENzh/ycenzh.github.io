@@ -5,14 +5,14 @@ layout: home
 hero:
   name: "Asterris"
   text: "Protect What You Love."
-  tagline: My great project tagline
+  tagline: Protect What You Love.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Let's Go
+      link: /go
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Github
+      link: https://github.com/yCENzh
 
 features:
   - title: Feature A

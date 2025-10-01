@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-// 由于 vitepress-plugin-sidebar 是 CommonJS 模块，需要使用默认导入
 import sidebarPlugin from 'vitepress-plugin-sidebar'
 
 // https://vitepress.dev/reference/site-config
@@ -12,10 +11,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Let's Go', link: '/go' },
+      { text: 'Github', link: 'https://github.com/yCENzh'
     ],
 
-    // 使用 vitepress-plugin-sidebar 自动生成侧边栏
     sidebar: sidebarPlugin.sideBar('vp', {
       ignoreMDFiles: ['index.md'], // 忽略 index.md 文件
       collapsible: true, // 支持折叠
