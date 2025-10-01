@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import sidebarPlugin from 'vitepress-plugin-sidebar'
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,6 +8,7 @@ export default defineConfig({
   
   title: "Asterris",
   description: "Protect What You Love.",
+  lang: 'zh-CN',
   
   markdown: {
     lineNumbers: true
@@ -19,7 +20,8 @@ export default defineConfig({
         btnPlaceholder: 'Search',
         placeholder: '往事书',
         emptyText: '空空如也',
-        heading: '共: {{searchResult}} 条结果'
+        heading: '共: {{searchResult}} 条结果',
+        customSearchQuery: chineseSearchOptimize,
       })
     ]
   },
