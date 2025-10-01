@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  srcDir: "vp",
+  
   title: "Asterris",
   description: "Protect What You Love.",
   themeConfig: {
