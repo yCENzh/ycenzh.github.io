@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@vue/runtime-core": "^3.5.22",
     "pagefind": "^1.4.0",
     "vitepress": "2.0.0-alpha.12",
     "vitepress-plugin-pagefind": "^0.4.15",
