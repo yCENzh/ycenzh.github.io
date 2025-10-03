@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { generateSidebar } from 'vitepress-sidebar'
 import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
-import { headConfig } from './head.js'
+import { headConfig } from './head.ts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

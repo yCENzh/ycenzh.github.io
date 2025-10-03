@@ -1,4 +1,4 @@
-// head.js
+// head.ts
 
 // Google Tag Manager script
 const gtmHeadScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,7 +14,9 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "tk5sr19x6c");`
 
-export const headConfig = [
+import type { HeadConfig } from 'vitepress'
+
+export const headConfig: HeadConfig[] = [
   // Google Tag Manager
   ['script', {}, gtmHeadScript],
   
