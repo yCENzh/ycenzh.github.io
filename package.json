@@ -10,5 +10,8 @@
     "vp:dev": "vitepress dev",
     "vp:build": "vitepress build",
     "vp:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@iconify/vue": "^5.0.0"
   }
 }

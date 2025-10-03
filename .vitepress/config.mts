@@ -48,8 +48,10 @@ export default defineConfig({
 
     sidebar: generateSidebar({
       documentRootPath: 'vp',
+      useTitleFromFrontmatter: true,
       useTitleFromFileHeading: true,
       collapsed: true,
+      useFolderLinkFromSameNameSubFile: true,
       rootGroupText: '往事书',
     })
   }
