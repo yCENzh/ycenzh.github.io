@@ -10,6 +10,11 @@ export default defineConfig({
   description: "Protect What You Love.",
   lang: 'zh-CN',
   
+  // Sitemap configuration
+  sitemap: {
+    hostname: 'https://ycenzh.github.io'
+  },
+
   markdown: {
     lineNumbers: true
   },
