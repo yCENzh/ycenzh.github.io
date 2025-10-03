@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { generateSidebar } from 'vitepress-sidebar'
 import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
+import { headConfig } from './head.js'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,6 +15,8 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://ycenzh.github.io'
   },
+
+  head: headConfig,
 
   markdown: {
     lineNumbers: true
