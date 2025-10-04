@@ -2,6 +2,27 @@
 
 本文档详细分析了 Astro 博客项目中 Umami 网站分析工具的实现方式，包括跟踪脚本集成、数据获取和访问量显示功能。
 
+## 使用方法
+
+在 `src/config.ts` 文件中配置 Umami 相关参数
+```typescript
+export const umamiConfig = {
+  enabled: false, // 是否启用 Umami 统计显示功能
+  shareURL: "https://us.umami.is/api/share/ABCD1234", // 分享 API 地址，支持自建服务
+  scripts: `
+<script defer src="XXXX.XXX" data-website-id="ABCD1234"></script>
+  `.trim(), // Umami 跟踪脚本
+} as const;
+```
+
+1. 前往Umami官网创建你的项目,然后复制要求你粘贴的 TrackingCode ,例如`<script defer src="https://cloud.umami.is/script.js" data-website-id="a1a1f897-326f-4e68-a6f0-54e9dc361522"></script>`一字不落的替换掉scripts里面的内容（如果你不需要显示访问量,只是单纯接入Umami那么可以不用下面的步骤）
+
+2. 打开站点设置开启分享URL,复制例如`https://cloud.umami.is/share/HM88wjbqInOwBNz0/fuwari.oh1.top`的链接,将链接前面的 cloud 这个单词换成你注册Umami账号时选择的地区（us or eu）,如果忘记了可以直接点开仪表盘看地址栏,例如`https://us.umami.is/websites/a1a1f897-326f-4e68-a6f0-54e9dc361522`,前面的 us 就是你的数据地区
+
+3. 最终替换成类似于`https://us.umami.is/share/HM88wjbqInOwBNz0/fuwari.oh1.top`这种,粘贴在配置文件中,设置成true,保存并部署即可
+
+4. 若无法获取访问量请验证配置文件中的 URL 和 script 是否正确,是否有语法错误等
+
 ## 功能概述
 
 Umami 是一个开源、轻量级、注重隐私的网站分析工具。在 Astro 博客中集成 Umami 可以帮助网站所有者：
