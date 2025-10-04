@@ -7,7 +7,7 @@ import { headConfig } from './head.ts'
 export default defineConfig({
   srcDir: "vp",
   
-  title: "Asterris",
+  title: "Zevru",
   description: "Protect What You Love.",
   lang: 'zh-CN',
   
