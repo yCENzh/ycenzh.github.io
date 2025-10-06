@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Asterris"
+  name: "Zevur"
   text: "Protect What You Love."
   tagline: Protect What You Love.
   actions:
