@@ -55,8 +55,7 @@ jobs:
         working-directory: fuwari-src
 
       - name: Deploy to Cloudflare
-        run: pnpm dlx wrangler deploy --assets dist --account_id=$CLOUDFLARE_ACCOUNT_ID
+        run: pnpm dlx wrangler deploy
         working-directory: fuwari-src
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
