@@ -13,35 +13,35 @@ jobs:
           repository: yCENzh/fuwari
           ref: ${{ github.event.client_payload.ref }}
           token: ${{ secrets.GH_PAT }}
-          path: ${{ runner.temp }}/src
+          path: fuwari-src
 
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-          cache-dependency-path: ${{ runner.temp }}/src/pnpm-lock.yaml
+          cache-dependency-path: fuwari-src/pnpm-lock.yaml
 
       - name: Cache wrangler
         uses: actions/cache@v4
         with:
           path: ~/.wrangler
-          key: wrangler-3-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: wrangler-3-${{ runner.os }}-${{ hashFiles('fuwari-src/pnpm-lock.yaml') }}
 
       - name: Cache dist
         uses: actions/cache@v4
         with:
-          path: ${{ runner.temp }}/src/dist
+          path: fuwari-src/dist
           key: dist-${{ github.event.client_payload.ref }}
           restore-keys: dist-
 
       - run: pnpm install --frozen-lockfile --prefer-offline
-        working-directory: ${{ runner.temp }}/src
+        working-directory: fuwari-src
       - run: pnpm run build
-        working-directory: ${{ runner.temp }}/src
+        working-directory: fuwari-src
 
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: ${{ runner.temp }}/src
+          workingDirectory: fuwari-src
           command: deploy
