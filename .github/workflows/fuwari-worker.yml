@@ -43,7 +43,7 @@ jobs:
       - run: pnpm run build
         working-directory: fuwari-src
 
-      - uses: cloudflare/wrangler-action@v4
+      - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: fuwari-src
