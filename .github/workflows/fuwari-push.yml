@@ -1,0 +1,36 @@
+name: Fuwari-Push
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 每天 UTC 6点（北京时间14点，需调整时区可改cron）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取源仓库
+        run: |
+          git clone --depth 1 https://github.com/yCENzh/fuwari.git
+          cd fuwari
+
+      - name: 清理 posts 文件夹（仅保留 Default）
+        run: |
+          cd fuwari
+          find src/connect/posts -mindepth 1 -maxdepth 1 ! -name "Default" -exec rm -rf {} +
+
+      - name: 获取源仓库最后提交信息
+        id: commit
+        run: |
+          cd fuwari
+          echo "HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "MSG=$(git log -1 --format=%s | tr ' ' '-')" >> $GITHUB_ENV  # 替换空格避免报错
+
+      - name: 推送至目标仓库
+        run: |
+          cd fuwari
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add .
+          git commit -m "commit-${{ env.MSG }}-${{ env.HASH }}"
+          git remote add target https://${{ secrets.GITHUB_PAT }}@github.com/yCENzh/Fuwari-yCENzh.git
+          git push -f target main  # 目标分支为 main，需修改请替换
