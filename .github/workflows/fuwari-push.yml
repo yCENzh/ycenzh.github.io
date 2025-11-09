@@ -10,14 +10,13 @@ jobs:
     steps:
       - name: 拉取私有源仓库
         run: |
-          # 私有仓库克隆需嵌入PAT授权
           git clone --depth 1 https://${{ secrets.GH_PAT }}@github.com/yCENzh/fuwari.git
           cd fuwari
 
       - name: 清理 posts 文件夹（仅保留 Default）
         run: |
           cd fuwari
-          find src/connect/posts -mindepth 1 -maxdepth 1 ! -name "Default" -exec rm -rf {} +
+          find src/content/posts -mindepth 1 -maxdepth 1 ! -name "Default" -exec rm -rf {} +
 
       - name: 获取源仓库最后提交信息
         id: commit
