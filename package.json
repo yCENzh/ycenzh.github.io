@@ -1,18 +1,17 @@
 {
-  "devDependencies": {
-    "@vue/runtime-core": "^3.5.22",
-    "pagefind": "^1.4.0",
-    "vitepress": "2.0.0-alpha.12",
-    "vitepress-plugin-pagefind": "^0.4.15",
-    "vitepress-sidebar": "^1.33.0",
-    "vue": "^3.5.22"
-  },
+  "name": "Starlight",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "vp:dev": "vitepress dev",
-    "vp:build": "vitepress build",
-    "vp:preview": "vitepress preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@iconify/vue": "^5.0.0"
+    "@astrojs/starlight": "^0.37.1",
+    "astro": "^5.6.1",
+    "sharp": "^0.34.2"
   }
 }

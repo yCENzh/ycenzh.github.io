@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+      minor-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+    pull-request-branch-name:
+      separator: "-"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions-minor:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+          
