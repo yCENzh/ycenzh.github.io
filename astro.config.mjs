@@ -8,6 +8,9 @@ export default defineConfig({
 		starlight({
 			title: 'Zevur',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/yCENzh/ycenzh.github.io' }],
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			sidebar: [
 				{
 					label: 'Guides',

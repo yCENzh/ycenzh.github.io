@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<div class="footer-separator"></div>
+
+<footer class="custom-footer">
+    <div class="footer-content">
+        <p class="footer-text">
+            &copy; <span id="copyright-year">{currentYear}</span> yCENzh. All Rights Reserved.
+        </p>
+        <div class="footer-links">
+            <a href="https://icp.gov.moe/?keyword=20260007" target="_blank">萌ICP备20260007号</a>
+            <a class="footer-link" href="https://github.com/yCENzh/ycenzh.github.io" target="_blank" rel="noopener">GitHub</a>
+            <a class="footer-link" href="/rss.xml" target="_blank" rel="noopener">RSS</a>
+            <a class="footer-link" href="/sitemap-index.xml" target="_blank" rel="noopener">Sitemap</a>
+        </div>
+        <p class="footer-powered">
+            Powered by <a class="footer-link" href="https://starlight.astro.build/" target="_blank" rel="noopener">Starlight</a>
+        </p>
+    </div>
+</footer>
+
+<style>
+  .footer-separator {
+    border-top: 1px dashed var(--sl-color-gray-6, #7d7d7d);
+    margin: 2rem auto;
+    width: 80%;
+  }
+  
+  .custom-footer {
+    background-color: var(--sl-color-gray-7, #2a2a2a);
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-text {
+    color: var(--sl-color-gray-3, #dcdcdc);
+    margin: 0;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    font-size: 0.9rem;
+  }
+  
+  .footer-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  .footer-powered {
+    color: var(--sl-color-gray-4, #b0b0b0);
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+</style>
