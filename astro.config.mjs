@@ -13,6 +13,14 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Astro',
+					items: [
+						{ label: 'umami', slug: 'astro/umami' },
+						{ label: '专栏', slug: 'astro/series' },
+						{ label: 'fancybox', slug: 'astro/fancybox' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
