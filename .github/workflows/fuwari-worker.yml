@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: fuwari-src
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           package_json_file: fuwari-src/package.json
 
