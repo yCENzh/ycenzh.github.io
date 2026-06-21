@@ -1,5 +1,5 @@
 {
-  "name": "Starlight",
+  "name": "starlight",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,10 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/starlight": "^0.37.6",
-    "astro": "^5.18.0",
-    "sharp": "^0.34.2",
-    "typescript": "^5.9.3"
+    "@astrojs/starlight": "^0.40.0",
+    "astro": "^6.4.5",
+    "sharp": "^0.34.5"
   }
 }

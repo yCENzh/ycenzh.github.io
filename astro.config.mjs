@@ -6,20 +6,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Zevur',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/yCENzh/ycenzh.github.io' }],
+			title: 'straight',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			
 			components: {
 				Footer: './src/components/Footer.astro',
 			},
+			
 			sidebar: [
-				{
-					label: 'Astro',
-					items: [
-						{ label: 'umami', slug: 'astro/umami' },
-						{ label: '专栏', slug: 'astro/series' },
-						{ label: 'fancybox', slug: 'astro/fancybox' },
-					],
-				},
 				{
 					label: 'Guides',
 					items: [
@@ -29,7 +23,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					items: [{ autogenerate: { directory: 'reference' } }],
 				},
 			],
 		}),
