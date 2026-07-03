@@ -23,7 +23,7 @@ jobs:
       - name: 安装&构建
         run: |
           corepack enable
-          pnpm install
+          pnpm install --frozen-lockfile
           pnpm run build
       - name: 上传 artifact
         uses: actions/upload-pages-artifact@v5
