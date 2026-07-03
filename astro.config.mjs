@@ -4,6 +4,14 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://ycenzh.github.io/",
+	base: "/",
+
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'hover',
+	},
+
 	integrations: [
 		starlight({
 			title: 'straight',

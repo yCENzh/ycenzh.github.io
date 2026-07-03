@@ -16,8 +16,36 @@ jobs:
     steps:
       - name: 使用 git 检出仓库
         uses: actions/checkout@v7
-      - name: 安装,构建与上传
-        uses: withastro/action@v6
+      - name: 设置 Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          corepack: true
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: 安装
+        run: pnpm install
+      - name: 恢复 Astro 缓存
+        id: astro-cache
+        uses: actions/cache/restore@v5
+        with:
+          path: node_modules/.astro
+          key: astro-cache-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            astro-cache-${{ runner.os }}-
+      - name: 构建
+        run: pnpm run build
+      - name: 保存 Astro 缓存
+        if: steps.astro-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: node_modules/.astro
+          key: ${{ steps.astro-cache.outputs.cache-primary-key }}
+      - name: 上传
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: "./dist/"
+          include-hidden-files: true
 
   deploy:
     needs: build
