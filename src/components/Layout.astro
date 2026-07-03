@@ -1,0 +1,10 @@
+---
+import DefaultPageFrame from '@astrojs/starlight/components/PageFrame.astro';
+import ClientRouter from 'astro/components/ClientRouter.astro';
+---
+<ClientRouter />
+<DefaultPageFrame {...Astro.props}>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+  <slot />
+</DefaultPageFrame>
