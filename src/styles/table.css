@@ -3,7 +3,6 @@
   overflow-x: auto;
   white-space: nowrap;
   border-collapse: collapse;
-  border: 1px solid var(--sl-color-hairline-shade);
 }
 
 .sl-markdown-content table:not(:where(.not-content *))::-webkit-scrollbar {
