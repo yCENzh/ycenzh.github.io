@@ -1,34 +1,47 @@
-.sl-markdown-content table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+.sl-markdown-content table:not(:where(.not-content *)) {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
   border: 1px solid var(--sl-color-hairline-shade);
-  overflow: hidden;
 }
 
-.sl-markdown-content th,
-.sl-markdown-content td {
+.sl-markdown-content table:not(:where(.not-content *))::-webkit-scrollbar {
+  height: 8px;
+}
+
+.sl-markdown-content table:not(:where(.not-content *))::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sl-markdown-content table:not(:where(.not-content *))::-webkit-scrollbar-thumb {
+  background: var(--sl-color-gray-5);
+}
+
+.sl-markdown-content table:not(:where(.not-content *))::-webkit-scrollbar-thumb:hover {
+  background: var(--sl-color-gray-4);
+}
+
+.sl-markdown-content :is(th, td):not(:where(.not-content *)) {
   padding: 0.75rem 1rem;
-  white-space: nowrap;
   border-bottom: 1px solid var(--sl-color-hairline-shade);
   border-right: 1px solid var(--sl-color-hairline-shade);
 }
 
-.sl-markdown-content th {
+.sl-markdown-content th:not(:where(.not-content *)) {
   background-color: var(--sl-color-gray-6);
   font-weight: 600;
   text-align: left;
 }
 
-.sl-markdown-content tr:last-child td {
+.sl-markdown-content tr:last-child :is(th, td):not(:where(.not-content *)) {
   border-bottom: none;
 }
 
-.sl-markdown-content th:last-child,
-.sl-markdown-content td:last-child {
+.sl-markdown-content :is(th, td):not(:where(.not-content *)):last-child {
   border-right: none;
 }
 
-.sl-markdown-content tbody tr:hover td {
+.sl-markdown-content tbody tr:hover :is(td):not(:where(.not-content *)) {
   background-color: var(--sl-color-gray-7);
 }
