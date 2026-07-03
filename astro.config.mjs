@@ -19,7 +19,7 @@ export default defineConfig({
 			
 			components: {
 				Footer: './src/components/Footer.astro',
-				PageFrame: './src/components/Layout.astro',
+				PageFrame: './src/layouts/Layout.astro',
 			},
 			
 			sidebar: [

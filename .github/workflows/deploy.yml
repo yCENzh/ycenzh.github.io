@@ -16,14 +16,14 @@ jobs:
     steps:
       - name: 使用 git 检出仓库
         uses: actions/checkout@v7
+      - name: 设置 pnpm
+        uses: pnpm/action-setup@v6
       - name: 设置 Node
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
-      - name: 启用 Corepack
-        run: corepack enable
       - name: 安装
         run: pnpm install
       - name: 恢复 Astro 缓存
