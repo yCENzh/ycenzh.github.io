@@ -10,34 +10,43 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
+    name: 构建站点
     runs-on: ubuntu-latest
     steps:
-      - name: 使用 git 检出仓库
+      - name: 检出仓库
         uses: actions/checkout@v7
-      - name: 设置 Node
-        uses: actions/setup-node@v7
+      - name: 设置环境
+        uses: pnpm/setup@v2
         with:
-          node-version: 24
-      - name: 安装&构建
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
-          pnpm run build
-      - name: 上传 artifact
+          version: latest
+          runtime: node@lts
+          cache: true
+          install: true
+      - parallel:
+          - name: 运行构建
+            run: pnpm build
+          - name: 类型检查
+            run: pnpm check
+      - name: 上传 Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: "./dist/"
           include-hidden-files: true
 
   deploy:
+    name: 部署到 Github Pages
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: 部署到 GitHub Pages
+      - name: 运行 Deploy
         id: deployment
         uses: actions/deploy-pages@v5

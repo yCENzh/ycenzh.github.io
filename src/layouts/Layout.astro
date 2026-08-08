@@ -1,7 +1,7 @@
 ---
 import "../styles/main.css";
-import DefaultPageFrame from '@astrojs/starlight/components/PageFrame.astro';
-import ClientRouter from 'astro/components/ClientRouter.astro';
+import DefaultPageFrame from "@astrojs/starlight/components/PageFrame.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 <ClientRouter />
 <DefaultPageFrame {...Astro.props}>

@@ -5,7 +5,7 @@ import { sidebar } from './src/config.ts';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://ycenzh.github.io/",
+	site: "https://ycenzh.github.io",
 	base: "/",
 
 	prefetch: {

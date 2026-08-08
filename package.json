@@ -2,7 +2,6 @@
   "name": "starlight",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,8 +11,8 @@
     "check": "npx @astrojs/check"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.41.5",
-    "astro": "^7.1.6",
+    "@astrojs/starlight": "^0.41.7",
+    "astro": "^7.2.0",
     "sharp": "^0.35.3"
   }
 }

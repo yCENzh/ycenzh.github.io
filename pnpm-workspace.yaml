@@ -1,18 +1,4 @@
 allowBuilds:
   esbuild: true
   sharp: true
-minimumReleaseAgeExclude:
-  - '@astrojs/starlight'
-  - '@astrojs/markdown-satteri'
-  - '@astrojs/mdx'
-  - '@expressive-code/core'
-  - '@expressive-code/plugin-frames'
-  - '@expressive-code/plugin-shiki'
-  - '@expressive-code/plugin-text-markers'
-  - '@astrojs/svelte'
-  - astro
-  - astro-expressive-code
-  - expressive-code
-  - rehype-expressive-code
-  - '@astrojs/internal-helpers@0.10.1'
-  - '@astrojs/markdown-remark@7.2.1'
+minimumReleaseAge: 60
