@@ -11,8 +11,8 @@
     "check": "npx @astrojs/check"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.41.7",
-    "astro": "^7.2.0",
-    "sharp": "^0.35.3"
+    "@astrojs/starlight": "^0.41.9",
+    "astro": "^7.2.9",
+    "sharp": "^0.35.4"
   }
 }
