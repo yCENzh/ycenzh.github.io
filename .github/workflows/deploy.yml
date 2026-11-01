@@ -22,7 +22,7 @@ jobs:
       - name: 检出仓库
         uses: actions/checkout@v7
       - name: 设置环境
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
           version: latest
           runtime: node@lts
